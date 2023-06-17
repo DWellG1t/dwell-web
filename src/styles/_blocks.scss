@@ -4,7 +4,7 @@
 // Button
 .button {
     width: 150px;
-    height: 50px;
+    height: 45px;
     @include gradient__accent;
     @include paragraph__p2($font-color__light, 500);
     border-radius: $border-radius__block;
@@ -88,6 +88,115 @@
         top: 50%;
         width: 75%;
         transform: translate(0, -50%);
+    }
+
+}
+
+.title__h2 {
+    @include title__h2;
+    margin-bottom: 100px;
+    span {
+        @include gradient__text;
+    }
+}
+
+.accordeon {
+    width: 400px;
+    h2 {
+        transition: $transition-duration__hover;
+        position: relative;
+        // background-color: $background-color__light;
+        @include gradient__background;
+        z-index: 11;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            z-index: -1;
+            @include gradient__accent;
+            border-radius: $border-radius__block;
+            transition: $transition-duration__hover;
+        }
+        @include paragraph__p2($font-color__sublight, $weight: 500);
+        box-shadow: $box-shadow__main;
+        padding: 0 $padding__smblock;
+        height: 45px;
+        border-radius: $border-radius__block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        span {
+            transition: ease $transition-duration__hover;
+        }
+    }
+    p {
+        margin-top: 10px;
+        @include paragraph__p3;
+        padding: 0 $padding__smblock;
+        transition: ease $animation-duration__main;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    &._accordActive {
+                
+        h2 {
+            span {
+                transform: rotate(-180deg);
+            }
+        }
+        p {
+            max-height: 999px;
+        }
+    } 
+}
+
+@media (pointer: fine) {
+    .accordeon {
+        h2:hover {
+            color: $font-color__light;
+            &::before {
+                width: 100%;
+
+            }
+        }
+    }
+}
+
+.sphere {
+    position: absolute;
+
+    border-radius: 50%;
+    width: 800px;
+    height: 800px;
+    @include gradient__background(0deg);
+}
+
+
+.tablePrice {
+    h2 {
+        @include paragraph__p2($weight: 600); 
+        display: flex;
+        justify-content: space-between;
+        box-shadow: $box-shadow__main;
+        padding: 0 $padding__smblock;
+        height: 45px;
+        align-items: center;
+        border-radius: $border-radius__block;
+    }
+
+    li {
+        @include paragraph__p3; 
+        display: flex;
+        justify-content: space-between;
+        padding: 0 $padding__smblock;
+        align-items: center;
+        border-radius: $border-radius__block;
     }
 
 }

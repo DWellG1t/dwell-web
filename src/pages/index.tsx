@@ -1,6 +1,11 @@
 import Head from 'next/head';
 
 import SectionIntro from '@/components/pages/index/sectionIntro';
+import SectionInfo from '@/components/pages/index/sectionInfo';
+import SectionTec from '@/components/pages/index/sectionTec';
+import SectionAnswers from '@/components/pages/index/sectionAnswers';
+import SectionWorks from '@/components/pages/index/sectionWorks';
+import SectionPrice from '@/components/pages/index/sectionPrice';
 
 export default function Home() {
   
@@ -16,6 +21,11 @@ export default function Home() {
       </Head>
 
       <SectionIntro />
+      <SectionInfo />
+      <SectionTec />
+      <SectionAnswers />
+      {/* <SectionWorks /> */}
+      <SectionPrice />
 
     </>
   )

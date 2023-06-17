@@ -1,0 +1,17 @@
+@import "../../../styles/mixins";
+@import "../../../styles/vars";
+
+.sectionAnswers__container {
+    @include padding__safe;
+}
+
+.sectionAnswers__title {
+    text-align: right;
+}
+
+.sectionAnswels__lists {
+    ul {
+        
+
+    }
+}

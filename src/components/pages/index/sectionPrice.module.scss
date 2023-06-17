@@ -1,0 +1,19 @@
+@import "../../../styles/mixins";
+@import "../../../styles/vars";
+
+.sectionPrice {
+
+}
+
+.sectionPrice__container {
+    @include padding__safe;
+}
+
+.sectionPrice__table {
+
+
+}
+
+.sectionPrice__title {
+    text-align: right;
+}

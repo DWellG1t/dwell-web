@@ -1,0 +1,23 @@
+@import "../../../styles/mixins";
+@import "../../../styles/vars";
+
+.sectionTec {
+
+}
+.sectionTec__container {
+    @include padding__safe;
+}
+
+.sectionTec__title {
+
+}
+
+.sectionTec__slider {
+    >div {
+        transition-timing-function: linear;
+    }
+    .sectionTec__slide {
+        font-size: 9rem;
+        color: $font-color__subdark;
+    }
+}
