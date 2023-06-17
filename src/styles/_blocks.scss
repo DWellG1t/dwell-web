@@ -1,0 +1,93 @@
+@import "./vars";
+@import "./mixins";
+
+// Button
+.button {
+    width: 150px;
+    height: 50px;
+    @include gradient__accent;
+    @include paragraph__p2($font-color__light, 500);
+    border-radius: $border-radius__block;
+} 
+
+@media (pointer: fine) {
+    .button:hover {
+
+    }   
+}
+
+// Text
+.text {
+    width: 400px;
+    // overflow: visible;
+    h1 {
+        @include title__h1;
+        margin-bottom: 30px;
+        white-space: nowrap;
+    }
+    h2 {
+        @include title__h2;
+        margin-bottom: 30px;
+    }
+    p {
+        @include paragraph__p2;
+        line-height: 20px;
+    }
+    button {
+        margin-top: 50px;
+    }
+}
+
+// Logo
+.logo {
+
+}
+
+// Cross
+.cross {
+
+
+}
+
+@media (pointer: fine) {
+    .cross {
+        &:hover {
+
+        }
+    }
+}
+
+// Burger
+.burger {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    &::before, &::after, span {
+        position: absolute;
+        background-color: $background-color__dark;
+        width: 100%;
+        height: 4px;
+        left: 0;
+        transition: ease $transition-duration__hover;
+        border-radius: $border-radius__smblock;
+    }
+    &::before, &::after {
+        content: "";
+
+    }
+    &::before {
+        top: 0;
+        z-index: 1;
+    }
+    &::after {
+        bottom: 0;
+        width: 50%;
+    }
+    span {
+        top: 50%;
+        width: 75%;
+        transform: translate(0, -50%);
+    }
+
+}

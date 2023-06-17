@@ -1,0 +1,54 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.loading {
+
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+
+    .loading__front {
+        @include gradient__background;
+    
+        width: 100%;
+        height: 100%;
+        // opacity: .5;
+        animation: loadingShow $animation-duration__main ease alternate infinite;
+        animation-delay: .3s;
+    }
+    
+    .loading__back {
+        @include gradient__accent(135deg);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        animation: loadingShow $animation-duration__main ease alternate infinite;
+        // display: none;
+    }
+}
+
+.loading._delay {
+    display: none;
+}
+
+
+@keyframes loadingShow {
+    from {
+        transform: translate(-100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes loadingHide {
+    from {
+        transform: translate(-100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}

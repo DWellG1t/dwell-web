@@ -1,0 +1,52 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+.sectionIntro {
+    margin-top: 100px;
+
+}
+
+.sectionIntro__container {
+    @include padding__safe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+
+.sectionIntro__text {
+    h2 {
+        @include paragraph__p1;
+        color: $font-color__dark;
+        margin-bottom: 5px;
+    }
+    button {
+        // margin-top: 20px;
+    }
+    h1 {
+        @include gradient__text;
+    }
+}
+.sectionIntro__img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $background-color__light;
+    img {
+        border: 30px solid $background-color__light;
+        border-radius: 50%;
+    }
+}
+
+.sectionIntro__background {
+    position: absolute;
+    
+    right: -40%;
+    top: -90%;
+    border-radius: 50%;
+    width: 800px;
+    height: 800px;
+    @include gradient__background(0deg);
+}

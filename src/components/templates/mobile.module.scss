@@ -1,0 +1,19 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.mobile {
+    position: fixed;
+    z-index: 99;
+    right: 0;
+    top: 60px;
+    @include gradient__background(45deg);
+    width: 300px;
+    height: 100%;
+    @include shadow__main;
+    transition: ease $animation-duration__main;
+    transform: translate(100%, 0);
+}
+
+.mobile._active {
+    transform: translate(0, 0);
+}
