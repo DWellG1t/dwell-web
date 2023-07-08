@@ -3,12 +3,43 @@
 
 .header {
     @include gradient__background;
-    @include shadow__main;
+    @include box-shadow__main;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    width: 100%
+    width: 100%;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35%;
+        height: 100%;
+        background-color: $background-color__light;
+        z-index: -1;
+        // border-radius: 0 32px 32px 0;
+        // box-shadow: $box-shadow__main;
+    }
+}
+
+.header__logo {
+    // overflow: visible;
+    width: 40px;
+    // height: 40px;    
+    // margin-right: 120px;  
+    display: flex;
+    div {
+        margin-left: 15px;
+        h2 {
+            @include paragraph__p1($font-color__dark);
+            @include gradient__text;
+        }
+        p {
+            @include paragraph__p3($font-color__subdark, 500);
+            white-space: nowrap;
+        }
+    }
 }
 
 .header__container {
@@ -33,10 +64,15 @@
 .header__list {
     display: flex;
     justify-content: space-between;
+    // align-items: center;
     margin-right: 70px;
     li {
         @include paragraph__p3($font-color__sublight, 500);
         transition: ease $transition-duration__hover;
+        // font-size: 3rem;
+        // height: 30px;
+        // text-align: end;
+        
     }
     li:not(:last-child) {
         margin-right: 30px;

@@ -1,0 +1,29 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.title__container {
+    @include padding__safe;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+.title__container._right {
+    .title__h2 {
+        text-align: end;
+    }
+}
+.title__container._left {
+    .title__h2 {
+        text-align: start;
+    }
+}
+
+.title__h2 {
+    width: 100%;
+    @include title__h2;
+    span {
+        @include gradient__text;
+    }
+}

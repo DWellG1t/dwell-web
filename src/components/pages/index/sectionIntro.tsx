@@ -29,7 +29,7 @@ export default function SectionIntro() {
                 </div>
                 
                 <div className={styles.sectionIntro__img + " _ibg"}>
-                    <img src={"https://img.freepik.com/free-photo/close-up-smiley-man-taking-selfie_23-2149155156.jpg?w=2000"}/>
+                    <img src={"https://avatars.githubusercontent.com/u/103192789?v=4"}/>
                 </div>
             </div>
         </section>

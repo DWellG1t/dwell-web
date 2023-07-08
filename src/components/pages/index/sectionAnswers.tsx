@@ -7,33 +7,44 @@ export default function SectionAnswers() {
     return (
         <section className={styles.sectionAnswers + " _section"}>
             <div className={styles.sectionAnswers__container + " _container"}>
-             
-
-
-                <h2 className={styles.sectionAnswers__title + " title__h2"}>
-                    Ответы на <span>вопросы</span>
-                </h2>
                 
-                <div className={styles.sectionAnswels__lists}>
+                <div className={styles.sectionAnswers__lists}>
                     <ul>
-                        <li onClick={event => { event.currentTarget.classList.toggle("_accordActive") }} className={styles.sectionAnswers__accordeon + " accordeon"}>
-                            <h2>Когда я приеду? <span><BsChevronUp /></span></h2>
-                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, corporis.</p>
-                        </li>
+                        {[
+                            {title: "Когда я приеду?", text: "приеду как смогу а когда смогу не знеаю можкт вообще не приеду"},
+                            {title: "Когда я приеду?", text: "приеду как смогу а когда смогу не знеаю можкт вообще не приеду"},
+                            {title: "Когда я приеду?", text: "приеду как смогу а когда смогу не знеаю можкт вообще не приеду"}, 
 
-                        <li onClick={event => { event.currentTarget.classList.toggle("_accordActive") }} className={styles.sectionAnswers__accordeon + " accordeon"}>
-                            <h2>Когда я приеду? <span><BsChevronUp /></span></h2>
-                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, corporis.</p>
-                        </li>
-
-                        <li onClick={event => { event.currentTarget.classList.toggle("_accordActive") }} className={styles.sectionAnswers__accordeon + " accordeon"}>
-                            <h2>Когда я приеду? <span><BsChevronUp /></span></h2>
-                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, corporis.</p>
-                        </li>
+                        ].map((el, i) => {
+                            return (
+                            <li key={++i} onClick={event => { event.currentTarget.classList.toggle("_accordActive") }} className={styles.sectionAnswers__accordeon + " accordeon"}>
+                                <h2>{el.title} <span><BsChevronUp /></span></h2>
+                                <p>{el.text}</p>
+                            </li>
+                            )
+                        })}
                     </ul>
-
-
                 </div>
+
+                <div className={styles.sectionAnswers__lists}>
+                    <ul>
+                        {[
+                            {title: "Когда я приеду?", text: "приеду как смогу а когда смогу не знеаю можкт вообще не приеду"},
+                            {title: "Когда я приеду?", text: "приеду как смогу а когда смогу не знеаю можкт вообще не приеду"},
+                            {title: "Когда я приеду?", text: "приеду как смогу а когда смогу не знеаю можкт вообще не приеду"}, 
+
+                        ].map((el, i) => {
+                            return (
+                            <li key={++i} onClick={event => { event.currentTarget.classList.toggle("_accordActive") }} className={styles.sectionAnswers__accordeon + " accordeon"}>
+                                <h2>{el.title} <span><BsChevronUp /></span></h2>
+                                <p>{el.text}</p>
+                            </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+
+
             </div>
         </section>
     )

@@ -3,7 +3,7 @@
 
 .sectionIntro {
     margin-top: 100px;
-
+    // height: 100vh;
 }
 
 .sectionIntro__container {
@@ -37,6 +37,7 @@
     img {
         border: 30px solid $background-color__light;
         border-radius: 50%;
+        overflow: hidden;
     }
 }
 

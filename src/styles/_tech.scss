@@ -9,22 +9,22 @@
 
 // Document
 html {
-    font-family: Roboto, 'Courier New', Courier, monospace !important;
+    font-family: Roboto, "PT sans", 'Courier New', Courier, monospace !important;
     font-size: 10px;
 }
 
 // Placeholder
 ::-webkit-input-placeholder { /* WebKit browsers */
-
+    color: $font-color__subdark;
  }
  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-
+    color: $font-color__subdark;
  }
  ::-moz-placeholder { /* Mozilla Firefox 19+ */
-
+    color: $font-color__subdark;
  }
  :-ms-input-placeholder { /* Internet Explorer 10+ */
-
+    color: $font-color__subdark;
  }
 
 ._container {
@@ -57,5 +57,6 @@ html {
         left: 0;
         top: 0;
         object-fit: cover;
+        overflow: visible;
     }
 }

@@ -3,6 +3,7 @@
 
 .sectionWorks {
 
+
 }
 
 .sectionWorks__container {
@@ -17,34 +18,28 @@
 }
 
 .sectionWorks__slider {
-    // &::before {
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 200px;
-    //     height: 100%;
-    //     z-index: 10;
-    //     background-color: red;
-    //     background: linear-gradient(to right, white 25%, rgba(0,0,0,0));
-    // }
-    // &::after {
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     width: 200px;
-    //     height: 100%;
-    //     z-index: 10;
-    //     background-color: red;
-    //     background: linear-gradient(to right,  rgba(0,0,0,0)  25%, white,);
-    // }
+    padding: 50px;
+    box-sizing: content-box;
+    width: 700px;
 }
 
+
 .sectionWorks__slide {
-    width: 300px;
-    height: 400px;
-    box-shadow: $box-shadow__main;
+    // z-index: 2;
+    opacity: 0;
+    transition: ease $animation-duration__main;
+    top: 0;
+    left: 0;
+    @include box-shadow__main;
     border-radius: $border-radius__block;
-    @include gradient__background;
+    // @include gradient__background;
+    overflow: hidden;
+    div {
+        overflow: hidden;
+        width: 320px;
+        height: 370px;
+        img {
+            object-fit: cover;
+        }
+    }
 }

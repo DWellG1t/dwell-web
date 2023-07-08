@@ -11,11 +11,13 @@
 
 .sectionInfo__container {
     @include padding__safe;
+
 }
 
 .sectionInfo__info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .sectionInfo__service {
@@ -41,19 +43,27 @@
 }
 
 .sectionInfo__order {
+    width: 400px;
+    li:not(:last-child) {
+        margin-bottom: 40px;
+    }
     li {
-        @include paragraph__p1;
+        @include paragraph__p2;
+        // position: relative;
         span {
-            margin-right: 20px;
+            margin-right: 30px;
+            position: relative;
             &::before {
                 content: "";
-                background-color: red;
-                // display: block;
+                // background-color: red;
+                display: block;
                 position: absolute;
-                top: 0;
-                left: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 width: 40px;
                 height: 40px;
+                border: solid 2px $background-color__subdark;
                 border-radius: 50%;
             }
         }

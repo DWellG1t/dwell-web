@@ -1,2 +1,44 @@
 @import "../../styles/vars";
 @import "../../styles/mixins";
+
+.footer {
+    @include box-shadow__main;
+    // @include gradient__background;
+}
+
+.footer__container {
+    @include padding__safe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.footer__text {
+    h1 {
+        @include title__h1($font-color__light);
+        @include gradient__text;
+    }
+    p {
+        @include paragraph__p2($font-color__sublight);
+    }
+}
+
+.footer__form {
+    input {
+        margin-bottom: 20px;
+    }
+    button {
+        margin-top: 20px;
+        align-self: end;
+    }
+}
+
+.footer__sphere {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 600px;
+    height: 200px;
+}

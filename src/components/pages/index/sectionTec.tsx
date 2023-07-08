@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import styles from "./sectionTec.module.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,9 +12,6 @@ export default function SectionTec() {
     
     return (
         <section className={styles.sectionTec + " _section"}>
-            <div className={styles.sectionTec__container + " _container"}>
-                <h2 className={styles.sectionTec__title + " title__h2"}>Мои <span>технологии</span></h2>
-            </div>
 
             <Swiper
                 className={styles.sectionTec__slider}
@@ -26,6 +24,7 @@ export default function SectionTec() {
                 autoplay={{
                     delay: 0,
                     disableOnInteraction: true,
+                    reverseDirection: false,
 
                 }}
                 loop={true}

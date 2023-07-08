@@ -3,15 +3,15 @@
 
 .sectionAnswers__container {
     @include padding__safe;
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
 }
 
-.sectionAnswers__title {
-    text-align: right;
-}
-
-.sectionAnswels__lists {
+.sectionAnswers__lists {
     ul {
-        
-
+        li:not(:last-child) {
+            margin-bottom: 15px;
+        }   
     }
 }
