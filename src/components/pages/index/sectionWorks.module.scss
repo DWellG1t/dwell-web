@@ -36,10 +36,38 @@
     overflow: hidden;
     div {
         overflow: hidden;
-        width: 320px;
+        width: 350px;
         height: 370px;
         img {
             object-fit: cover;
         }
     }
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+    .sectionWorks__container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
+// При повороте экрана
+@media (orientation: landscape) and (max-height: 300px) {
+
+   
 }

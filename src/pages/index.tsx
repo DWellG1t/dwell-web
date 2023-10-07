@@ -7,8 +7,11 @@ import SectionAnswers from '@/components/pages/index/sectionAnswers';
 import SectionWorks from '@/components/pages/index/sectionWorks';
 import SectionPrice from '@/components/pages/index/sectionPrice';
 import SectionTextFullstack from '@/components/pages/index/sectionTextFullstack';
+import SectionTextDebug from '@/components/pages/index/sectionTextDebug';
+import SectionTextContract from '@/components/pages/index/sectionTextContract';
+import SectionNews from '@/components/pages/index/sectionNews';
+import SectionStats from '@/components/pages/index/sectionStats';
 
-import Title from '@/components/templates/title';
 
 export default function Home() {
   
@@ -20,15 +23,16 @@ export default function Home() {
 
       <SectionIntro />
       <SectionTextFullstack />
-      <Title text='Мои ' accent='работы' pos='left'/>
-      <SectionWorks />
-      <Title text='Порядок ' accent='работы' pos='right'/>
-      <SectionInfo />
-      <Title text='Мои ' accent='технологии' pos='left'/>
-      <SectionTec />
-      <Title text='Ответы на ' accent='вопросы' pos='right'/>
+      {/* <SectionStats /> */}
       <SectionAnswers />
+      <SectionInfo />
+      <SectionTextContract />
+      <SectionStats/>
+      <SectionTextDebug />
+      <SectionTec />
+      <SectionWorks />
       <SectionPrice />
+      {/* <SectionNews /> */}
 
     </>
   )

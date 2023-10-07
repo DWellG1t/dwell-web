@@ -11,7 +11,7 @@ export default function SectionTec() {
     
     
     return (
-        <section className={styles.sectionTec + " _section"}>
+        <section className={styles.sectionTec + " "}>
 
             <Swiper
                 className={styles.sectionTec__slider}

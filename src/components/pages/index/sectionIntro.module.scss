@@ -1,13 +1,27 @@
 @import "../../../styles/vars";
 @import "../../../styles/mixins";
 
+
+
 .sectionIntro {
-    margin-top: 100px;
-    // height: 100vh;
+    // margin-top: 70px;
+    height: 100vh;
+    // position: relative;
+    // padding: 120px 0;
+    box-sizing: content-box;
+    position: relative;
+
+}
+
+.sectionIntro__backText {
+    top: -120px;
+    left: 90px;
 }
 
 .sectionIntro__container {
     @include padding__safe;
+    height: 100%;
+    // width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,16 +30,22 @@
 
 
 .sectionIntro__text {
+
     h2 {
         @include paragraph__p1;
-        color: $font-color__dark;
-        margin-bottom: 5px;
+        color: $font-color__subdark;
+        margin-bottom: 15px;
     }
     button {
         // margin-top: 20px;
     }
     h1 {
-        @include gradient__text;
+        .sectionFirst__admin {
+            @include gradient__text;
+            @include title__h2;
+        }
+        @include paragraph__p1;
+        color: $font-color__subdark;
     }
 }
 .sectionIntro__img {
@@ -34,6 +54,7 @@
     border-radius: 50%;
     overflow: hidden;
     background-color: $background-color__light;
+    transform: translate(-70px, 0);
     img {
         border: 30px solid $background-color__light;
         border-radius: 50%;
@@ -43,11 +64,131 @@
 
 .sectionIntro__background {
     position: absolute;
-    
-    right: -40%;
-    top: -90%;
+    z-index: -1;
+    right: -35%;
+    top: -40%;
     border-radius: 50%;
     width: 800px;
     height: 800px;
     @include gradient__background(0deg);
+
+
 }
+
+.sectionIntro__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 65px;
+    // top: 0;
+    transform: translate(-50%, 0);
+    text-align: center;
+    @include paragraph__p2;
+    transition: ease $transition-duration__hover;
+    opacity: 1;
+    h2 {
+        position: relative;
+        cursor: pointer;
+        transition: ease $transition-duration__hover;
+        a {
+            color: inherit;
+        }
+        &::before, &::after {
+            // content: "";
+            transition: ease $transition-duration__hover;
+            width: 100px;
+        }  
+        &::before {
+            position: absolute;
+            left: -120px;
+            top: 50%;
+            transform: translate(0, 50%);
+            height: 1px;
+            background-color: $background-color__subdark;
+        }
+        &::after {
+            position: absolute;
+            right: -120px;
+            top: 50%;
+            transform: translate(0, 50%);
+            height: 1px;
+   
+            background-color: $background-color__subdark;
+        }
+
+    }
+    div {
+        margin-top: 5px;
+        animation: chevronHover ease $animation-duration__main alternate infinite;
+        transition: ease $transition-duration__hover;
+    }
+
+}
+
+@media (pointer: fine) {
+    .sectionIntro__scroll h2:hover {
+        transform: scale(1.1, 1.1);
+        + div {
+            opacity: 0;
+        }
+        &::before, &::after {
+            opacity: 0;
+        }
+    }
+}
+
+@keyframes chevronHover {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 7px);
+    }
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+    .sectionIntro {
+        height: auto;
+        padding: 100px 0;
+    }
+
+    .sectionIntro__text {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .sectionIntro__container {
+        flex-direction: column;
+        // margin-top: 100px;
+    }
+    .sectionIntro__img {
+        transform: translate(0, 0);
+
+    }
+    .sectionIntro__background {
+        display: none;
+
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
+// При повороте экрана
+@media (orientation: landscape) and (max-height: 300px) {
+
+   
+}
+

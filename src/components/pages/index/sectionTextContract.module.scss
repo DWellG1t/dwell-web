@@ -1,0 +1,36 @@
+@import "../../../styles/mixins";
+@import "../../../styles/vars";
+
+.sectionTextContract {
+
+}
+
+.sectionTextContract__backText {
+    top: -120px;
+    left: 90px;
+}
+
+.sectionTextContract__container {
+    @include padding__safe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px;
+}
+
+.sectionTextContract__images {
+
+}
+
+.sectionTextContract__img {
+
+}
+
+@keyframes imgHover {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, -40px);
+    }
+}

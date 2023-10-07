@@ -3,7 +3,7 @@
 
 .mobile {
     position: fixed;
-    z-index: 99;
+    z-index: 60;
     right: 0;
     top: 60px;
     @include gradient__background(45deg);
@@ -11,9 +11,109 @@
     height: 100%;
     @include box-shadow__main;
     transition: ease $animation-duration__main;
-    transform: translate(100%, 0);
+    transform: translate(130%, 0);
+    padding: $padding__block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    nav {
+        // text-align: center;
+        li {
+            position: relative;
+            transition: ease $transition-duration__hover;
+            &::before {
+                z-index: -1;
+                border-radius: $border-radius__block;
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -70px;
+                width: 0px;
+                transition: ease $transition-duration__hover;
+                transform: translate(0, -50%);
+                height: $height__smblock;
+                @include gradient__accent;
+            }
+
+        }
+        li._active {
+            color: $font-color__light;
+            &::before {
+                width: 230px;
+            }
+        }
+
+         ul {
+            li:not(:last-child) {
+                margin-bottom: 30px;
+            }
+            li {
+                @include paragraph__p1($font-color: $font-color__sublight);
+                cursor: pointer;
+            }
+            
+        }
+    }
+}
+
+@media (pointer: fine) {
+    .mobile {
+        nav {
+            li:hover {
+                color: $font-color__light;
+                &::before {
+                    width: 230px;
+                }
+            }
+        }
+    }
 }
 
 .mobile._active {
+    transform: translate(0, 0);
+}
+
+.mobile__contacts {
+    margin-top: 70px;
+    @include paragraph__p2($font-color: $font-color__sublight);
+    display: flex;
+    flex-direction: column;
+    span {
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: ease $transition-duration__hover;
+    }
+    div {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 4rem;
+    }
+} 
+
+@media (pointer: fine) {
+    .mobile__contacts {
+        span:hover {
+            color: $font-color__light;
+        }
+    }
+}
+
+
+.mobile__back {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    @include box-shadow__main;
+    @include gradient__accent($deg: -90deg);
+    transition: ease $animation-duration__main;
+    z-index: 20;
+    transform: translate(100%, 0);
+}
+
+.mobile__back._active {
     transform: translate(0, 0);
 }

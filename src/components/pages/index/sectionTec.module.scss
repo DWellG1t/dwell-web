@@ -6,6 +6,7 @@
 }
 .sectionTec__container {
     @include padding__safe;
+
 }
 
 .sectionTec__title {
@@ -13,6 +14,7 @@
 }
 
 .sectionTec__slider {
+
     >div {
         transition-timing-function: linear;
     }

@@ -24,21 +24,39 @@
 }
 
 .header__logo {
-    // overflow: visible;
-    width: 40px;
-    // height: 40px;    
-    // margin-right: 120px;  
     display: flex;
-    div {
+    cursor: pointer;
+    background-color: $background-color__light;
+    height: 100%;
+    align-items: center;
+    img {
+        width: 40px;
+    }
+
+    .header__text {
         margin-left: 15px;
+        max-width: 130px;
+        
         h2 {
-            @include paragraph__p1($font-color__dark);
+            @include paragraph__p1($font-color__dark, $weight: 600);
             @include gradient__text;
+            span {
+                font-size: 1.4rem;
+                color: $font-color__subdark;
+                -webkit-text-fill-color: $font-color__subdark;
+            }
         }
-        p {
-            @include paragraph__p3($font-color__subdark, 500);
-            white-space: nowrap;
-        }
+
+
+    }
+}
+
+.header__slider {
+    width: 100%;
+    p {
+        @include paragraph__p3($font-color__subdark, 500);
+        white-space: nowrap;
+        background-color: $background-color__light;
     }
 }
 
@@ -49,10 +67,6 @@
     align-items: center;
     justify-content: space-between;
     color: white;
-}
-
-.header__logo {
-    
 }
 
 .header__nav {
@@ -124,3 +138,58 @@
 
     }
 }
+
+.header__burger._active {
+    &::before, &::after, span {
+        background-color: $background-color__light;
+        width: 100%;
+    }
+    span {
+        opacity: 0;
+    }
+    &::before {
+        top: 50%;
+        transform: translate(0, -50%) rotate(-45deg) ;
+    }
+    &::after {
+        bottom: 50%;
+        transform: translate(0, 50%) rotate(45deg) ;
+    }
+
+    .burger__flag {
+        height: 75px;
+    }
+}   
+
+@media (max-width: 700px) {
+    .header__list {
+        display: none;
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
+// При повороте экрана
+@media (orientation: landscape) and (max-height: 300px) {
+
+   
+}
+

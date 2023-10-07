@@ -1,0 +1,17 @@
+@import "../../../styles/mixins";
+@import "../../../styles/vars";
+
+.sectionNews__slide {
+
+}
+
+.sectionNews{
+
+}
+
+.sectionNews__slider {
+    padding: 50px 0;
+    > div {
+        transition-timing-function: linear;
+    }
+}

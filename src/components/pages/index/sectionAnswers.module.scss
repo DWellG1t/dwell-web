@@ -6,6 +6,8 @@
     display: flex;
     // align-items: center;
     justify-content: space-between;
+    overflow: visible;
+    position: relative;
 }
 
 .sectionAnswers__lists {
@@ -14,4 +16,10 @@
             margin-bottom: 15px;
         }   
     }
+}
+
+.sectionAnswers__backPointers {
+    right: 120px;
+    transform: translate(0, 100px);
+    background: url("/img/pages/index/lines.svg");
 }

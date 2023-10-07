@@ -1,0 +1,22 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.symbol {
+    position: fixed;
+    left: 80px;
+    top: 70%;
+    transform: translate(0, -50%) rotate(-90deg);
+    // text-orientation: upright;
+    // writing-mode: vertical-lr;
+    @include paragraph__p2($weight: 300);
+
+    &::before {
+        content: "";
+        background-color: $background-color__subdark;
+        position: absolute;
+        top: 50%;
+        left: -80px;
+        width: 70px;
+        height: 1px;
+    }
+}

@@ -10,50 +10,50 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 500px;
+    // height: 500px;
 }
 
 .sectionTextFullstack__images {
-    position: relative;
-    .sectionTextFullstack__img:nth-child(1) {
-        // position: absolute;
-        width: 400px;
-        height: 400px;
-        animation: imgHover $animation-duration__main + 3s ease infinite alternate;
-    }
+ 
+}
 
-    .sectionTextFullstack__img:nth-child(2) {
-        position: absolute;
-        width: 150px;
-        height: 150px;
-        left: 250px;
-        top: 150px;
-        z-index: 2;
-        animation: imgHover $animation-duration__main + 1.3s ease infinite alternate;
-        // animation-delay: .1s;
-    }
+.sectionTextFullstack__backText {
+    top: -120px;
+    left: -160px;
 
-    .sectionTextFullstack__img:nth-child(3) {
-        position: absolute;
-        width: 150px;
-        height: 50px;
-        top: 320px;
-        left: 50px;
-        z-index: 2;
-        animation: imgHover $animation-duration__main + 2.2s ease infinite alternate;
-        // animation-delay: .5s;
-    }
 }
 
 .sectionTextFullstack__img {
 
 }
 
-@keyframes imgHover {
-    from {
-        transform: translate(0, 0);
+@media (min-width: 1200px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+    .sectionTextFullstack__images {
+        margin-bottom: 150px;
     }
-    to {
-        transform: translate(0, -40px);
+    .sectionTextFullstack__container {
+        flex-direction: column;
+        text-align: center;
     }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
+// При повороте экрана
+@media (orientation: landscape) and (max-height: 300px) {
+
+   
 }

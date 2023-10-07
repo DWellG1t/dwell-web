@@ -2,8 +2,16 @@
 @import "../../styles/mixins";
 
 .footer {
-    @include box-shadow__main;
+    // @include box-shadow__main;
     // @include gradient__background;
+}
+.footer._section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .footer__container {
@@ -12,26 +20,37 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 .footer__text {
     h1 {
-        @include title__h1($font-color__light);
+        @include title__h1;
         @include gradient__text;
     }
+    h2 {
+        @include paragraph__p2;
+    }
     p {
-        @include paragraph__p2($font-color__sublight);
+        @include paragraph__p3();
+    }
+    div {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span:not(:last-child) {
+            margin-right: 20px; 
+            
+        }
+        span {
+            @include title__h2;
+        }
     }
 }
 
 .footer__form {
-    input {
-        margin-bottom: 20px;
-    }
-    button {
-        margin-top: 20px;
-        align-self: end;
-    }
+
 }
 
 .footer__sphere {
@@ -41,4 +60,17 @@
     z-index: -1;
     width: 600px;
     height: 200px;
+}
+
+@media (max-width: 1000px) {
+    
+    .footer__text {
+        margin-bottom: 20px;
+        width: 300px;
+    }
+    .footer__container {
+        flex-direction: column;
+        text-align: center;
+    
+    }
 }

@@ -12,7 +12,7 @@ export default function SectionWorks() {
             <div className={styles.sectionWorks__container + " _container"}>
                 <div className=" text">
                     <h2>Мои работы</h2>
-                    <p>ыаыва</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores quam itaque molestias in, rerum a voluptatibus ea quae neque maxime.</p>
                 </div>
                 
                 <Swiper

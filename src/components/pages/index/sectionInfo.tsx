@@ -4,10 +4,16 @@ import AOS from "aos";
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 
+import { useDispatch } from "react-redux";
+import { setActiveLoad } from "@/store/loadSlice";
 
+import { useRouter } from "next/router";
 
 export default function SectionInfo() {
 
+    const dispatch = useDispatch()
+    const router = useRouter();
+    
     useEffect(() => {
         AOS.init({
         duration: 2000,
@@ -16,8 +22,8 @@ export default function SectionInfo() {
 
     return (
         <section className={styles.sectionInfo + " _section"} >
-            <div className={styles.sectionInfo__container + " _container"} data-aos="fade-right">
-
+            <div className={styles.sectionInfo__container + " _container"}>
+                {/* <div className={styles.sectionInfo__sphere + " sphere"}></div> */}
                 <div className={styles.sectionInfo__info}>
                     <div className={styles.sectionInfo__service}>
                         <ul>
@@ -42,7 +48,7 @@ export default function SectionInfo() {
                         {[
                             "Оставьте заявку",
                             "Дождаться звонка",
-                            "Дождаться звонка",
+                            "Предоставить ТЗ",
                             "Дождаться звонка",
                             "Дождаться звонка",
                             "Дождаться звонка",
@@ -55,7 +61,7 @@ export default function SectionInfo() {
                                 </li>
                             )
                         })}
-                        <button className="button">Оставить заявку</button>
+                        <button onClick={() => { dispatch(setActiveLoad("")); setTimeout(() => { router.push("/contact")}, 500)}}  className="button">Заявка</button>
                     </ul>
 
 

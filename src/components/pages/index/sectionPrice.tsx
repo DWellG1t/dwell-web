@@ -3,12 +3,14 @@ import { BsChevronUp } from "react-icons/bs";
 
 import { useState } from "react";
 
+import { useRouter } from "next/router";
+
 export default function SectionPrice() {
-    
+    const { pathname} = useRouter();
     const [table, setTable] = useState(false);
 
     return (
-        <section className={styles.sectionPrice + " _section"}>
+        <section className={styles.sectionPrice + " _section" + (pathname == "/price" ? ` ${styles._price}` : "")}>
             <div className={styles.sectionPrice__container + " _container"}>
                <ul className={styles.sectionPrice__table + (table ? ` ${styles._active}` : "")}>
                     <h2>
@@ -38,10 +40,10 @@ export default function SectionPrice() {
                             </li>
                         )
                     })}
-                    <div className={styles.sectionPrice__chevron} onClick={ () => { setTable(prev => !prev) }}>
-                        <span><BsChevronUp/></span>
-                    </div>
                </ul>
+               <div className={styles.sectionPrice__chevron + (table ? ` ${styles._active}` : "")} onClick={ () => { setTable(prev => !prev) }}>
+                    <span><BsChevronUp/></span>
+                </div>
             </div>
         </section>
     )

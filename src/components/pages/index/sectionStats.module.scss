@@ -1,0 +1,64 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+.sectionStats {
+    overflow: visible;
+    z-index: 10;
+    // background-color: red;
+}
+
+.sectionStats__container {
+    @include padding__safe;
+    overflow: visible;
+}
+
+.sectionStats__backSVG  {
+    left: 250px;
+    // height: 200px;
+    transform: translate(0, -340px);
+    background: url("/img/pages/index/lines.svg");
+    background-size: contain;
+    width: 500px;
+    height: 250px;
+
+}
+
+.sectionStats__table {
+    // @include box-shadow__main;
+    border-radius: $border-radius__block;
+    height: 150px;
+    // padding: 0 $padding__block;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // background-color: red;
+        li {
+            background: url("/img/pages/index/reward.svg") no-repeat;
+            // background-color: red;
+            width: 170px;
+            height: 170px;
+            position: relative;
+            p {
+                @include gradient__text;
+                
+                color: $font-color__subdark;
+                left: 50%;
+                bottom: -30px;
+                transform: translate(-50%, -50%);
+                @include paragraph__p2;
+                position: absolute;
+                white-space: nowrap;
+            }
+            h2 {
+                color: $font-color__subdark;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                position: absolute;
+                font-size: 6.4rem;
+            }
+        }
+    }
+}

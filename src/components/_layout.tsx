@@ -1,12 +1,16 @@
 import Header from "./templates/header";
 import Footer from "./templates/footer";
 import Mobile from "./templates/mobile";
+import Fade from "./templates/fade";
 import Loading from "./templates/loading";
 import Head from "next/head";
+import PopupContact from "./templates/popupContact";
+import Symbol from "./templates/symbol";
 
 // Основной Layout
 export default function Layout({ children }: any) {
-    
+
+
     return (
     <>
         <Head>
@@ -18,13 +22,19 @@ export default function Layout({ children }: any) {
             <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700,700italic" rel="stylesheet" />
         </Head>
         <Header />
+        <Fade />
+        <Loading />
         <Mobile />
+        {/* <Symbol /> */}
+        {/* <PopupContact  /> */}
+
         {/* <Loading /> */}
-        <main className='_main'> 
-            <div className="_wrapper">
+        <div className="_wrapper">
+            <main className='_main'> 
                 { children }
-            </div>
-        </main>
+            </main>
+        </div>
+
         <Footer />
     </>
     )

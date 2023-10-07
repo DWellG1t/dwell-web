@@ -2,11 +2,23 @@
 @import "../../../styles/vars";
 
 .sectionPrice {
+    margin-bottom: 70px;
+}
 
+.sectionPrice._price {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0px;
+    padding: 0;
 }
 
 .sectionPrice__container {
     @include padding__safe;
+    position: relative;
+    width: 100%;
 }
 
 .sectionPrice__table {
@@ -23,7 +35,7 @@
         align-items: center;
         height: $height__smblock;
         border-radius: $border-radius__block;
-        padding: 0 $padding__smblock;
+        padding: 0 $padding__block;
 
     }
     li {
@@ -31,20 +43,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 $padding__smblock;
+        padding: 0 $padding__block;
         margin-top: 15px;
     }
 
 }
 
 .sectionPrice__table._active {
-    max-height: 999px;
-    .sectionPrice__chevron {
-        height: 20px;
-        span {
-            transform: rotate(-180deg);
-        }
-    }
+    max-height: 400px;
+
 }
 
 
@@ -53,8 +60,9 @@
     opacity: 1;
     transition: ease $animation-duration__main;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: -50px;
+    left: 50%;
+    transform: translate(-50%, 0);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -66,7 +74,13 @@
         transition: ease $transition-duration__hover;
         transform: rotate(0deg);
     }
-    // background-color: red;
+
+    &._active {
+        height: 20px;
+        span {
+            transform: rotate(-180deg);
+        }
+    }
 }
 .sectionPrice__price {
     @include gradient__text;

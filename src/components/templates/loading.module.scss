@@ -9,46 +9,72 @@
     width: 100%;
     height: 100%;
     z-index: 99;
-
-    .loading__front {
-        @include gradient__background;
-    
-        width: 100%;
-        height: 100%;
-        // opacity: .5;
-        animation: loadingShow $animation-duration__main ease alternate infinite;
-        animation-delay: .3s;
-    }
-    
+    pointer-events: none;
+        
     .loading__back {
-        @include gradient__accent(135deg);
+        @include gradient__accent(131deg);
         width: 100%;
         height: 100%;
         position: fixed;
-        animation: loadingShow $animation-duration__main ease alternate infinite;
-        // display: none;
+        animation: loadingShowBack $animation-duration__main + 1s ease;
+        display: none;
+        transform: translate(-100%);
     }
-}
 
-.loading._delay {
-    display: none;
-}
+    .loading__front {
+        @include gradient__background($deg: 70deg);
+        transform: translate(-100%);
+        width: 100%;
+        height: 100%;
+        // opacity: .5;
+        animation: loadingShow $animation-duration__main + 1s ease;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        div {
+            width: 100px;
+            height: 100px;
+        }
+    }
 
+    &._active {
+        pointer-events: all;
+        .loading__front {
+            display: flex;
+        }
+        .loading__back {
+            display: block;
+        }
+    }
+
+}
 
 @keyframes loadingShow {
-    from {
+    0% {
         transform: translate(-100%, 0);
     }
-    to {
+    30% {
         transform: translate(0, 0);
+    }
+    70% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100%, 0);
     }
 }
 
-@keyframes loadingHide {
-    from {
+@keyframes loadingShowBack {
+    0% {
         transform: translate(-100%, 0);
     }
-    to {
+    20% {
         transform: translate(0, 0);
+    }
+    80% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100%, 0);
     }
 }

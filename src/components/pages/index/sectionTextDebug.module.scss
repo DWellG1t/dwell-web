@@ -1,0 +1,61 @@
+@import "../../../styles/mixins";
+@import "../../../styles/vars";
+
+.sectionTextDebug {
+}
+
+.sectionTextDebug__container {
+    @include padding__safe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px;
+}
+
+.sectionTextDebug__images {
+
+}
+
+.sectionTextDebug__img {
+
+}
+
+@keyframes imgHover {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, -40px);
+    }
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+    .sectionTextDebug__images {
+        margin-bottom: 150px;
+    }
+    .sectionTextDebug__container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
+// При повороте экрана
+@media (orientation: landscape) and (max-height: 300px) {
+}
+   

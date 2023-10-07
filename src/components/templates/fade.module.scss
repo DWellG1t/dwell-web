@@ -1,0 +1,21 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.fade {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    pointer-events: none;
+    background-color: black;
+    opacity: 0;
+    transition: ease $animation-duration__main;
+    @include gradient__background;
+}
+
+.fade._active {
+    pointer-events: all;
+    opacity: .4;
+}

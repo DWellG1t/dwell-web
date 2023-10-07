@@ -2,12 +2,9 @@
 @import "../../../styles/vars";
 
 .sectionInfo {
-
+    // @include box-shadow__main;
 }
 
-.sectionInfo__title {
-    text-align: right;
-}
 
 .sectionInfo__container {
     @include padding__safe;
@@ -18,12 +15,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 600px;
 }
 
 .sectionInfo__service {
     @include gradient__background;
-    border-radius: $border-radius__block;
+    @include box-shadow__main;
+
+    box-sizing: content-box;
     padding: $padding__block;
+    // @include gradient__background;
+    border-radius: $border-radius__block;
+    // padding: $padding__block;
     width: 400px;
     ul {
         li:not(:last-child) {
@@ -43,14 +46,31 @@
 }
 
 .sectionInfo__order {
+    
     width: 400px;
-    li:not(:last-child) {
-        margin-bottom: 40px;
+    li:not(:last-of-type) {
+        
+        span {
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, 0);
+                top: 140%;
+                display: block;
+                height: 27px;
+                width: 1px;
+                border: 1px dashed $background-color__subdark;
+                // background-color: $background-color__subdark;
+            }
+        }
     }
     li {
-        @include paragraph__p2;
-        // position: relative;
+        margin-bottom: 45px;
+        @include paragraph__p2($font-color: $font-color__subdark);
+        position: relative;
         span {
+            // text-align: center;
             margin-right: 30px;
             position: relative;
             &::before {
@@ -66,6 +86,15 @@
                 border: solid 2px $background-color__subdark;
                 border-radius: 50%;
             }
+
         }
     }
+}
+
+.sectionInfo__sphere {
+    z-index: -1;
+    left: -200px;
+    top: -140px;
+    width: 700px;
+    height: 700px;
 }

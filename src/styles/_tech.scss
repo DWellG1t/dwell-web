@@ -11,6 +11,8 @@
 html {
     font-family: Roboto, "PT sans", 'Courier New', Courier, monospace !important;
     font-size: 10px;
+    scroll-behavior: smooth;
+    
 }
 
 // Placeholder
@@ -44,7 +46,7 @@ html {
 }
 
 ._section {
-    padding: 40px 0;
+    padding: 80px 0;
     box-sizing: content-box;
 }
 

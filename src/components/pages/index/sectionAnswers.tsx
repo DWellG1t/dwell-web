@@ -7,7 +7,9 @@ export default function SectionAnswers() {
     return (
         <section className={styles.sectionAnswers + " _section"}>
             <div className={styles.sectionAnswers__container + " _container"}>
-                
+                <div className={styles.sectionAnswers__backPointers + " backSVG"}>
+                    
+                </div>
                 <div className={styles.sectionAnswers__lists}>
                     <ul>
                         {[

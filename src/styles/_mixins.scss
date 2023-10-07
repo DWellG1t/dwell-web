@@ -10,14 +10,14 @@
 
 @mixin gradient__accent($deg: 90deg) {
     background: $background-color__accent;
-    background: -moz-linear-gradient($deg, $background-color__accent 0%, rgba(221,238,68,1) 100%);
+    background: -moz-linear-gradient($deg, $background-color__accent 0%, rgb(221, 238, 68) 100%);
     background: -webkit-linear-gradient($deg, $background-color__accent 0%, rgba(221,238,68,1) 100%);
     background: linear-gradient($deg, $background-color__accent 0%, rgba(221,238,68,1) 100%);
 }
 
 @mixin gradient__text($deg: 90deg) {
     color: $font-color__accent;
-    background: -moz-linear-gradient($deg, $font-color__accent 0%, rgb(221, 238, 68) 100%);
+    background: -moz-linear-gradient($deg, $font-color__accent 0%, rgba(221, 238, 68, 1) 100%);
     background: -webkit-linear-gradient($deg, $font-color__accent 0%, rgba(221,238,68,1) 100%);
     background: linear-gradient($deg, $font-color__accent 0%, rgba(221,238,68,1) 100%);
 

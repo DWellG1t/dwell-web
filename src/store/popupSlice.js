@@ -7,7 +7,7 @@ const popupSlice = createSlice({
         active: false,
     },
     reducers: { // сами reducers *функции, изменяющие состояние
-        setActive(state, action){ // state - текущее состояние, action - полученный action
+        setActivePopup(state, action){ // state - текущее состояние, action - полученный action
             if(action.payload == "false") 
                 state.active = false;
             else
@@ -16,7 +16,7 @@ const popupSlice = createSlice({
     }
 })
 
-export const { setActive } = popupSlice.actions; // redux-toolkit позволяет экспортировать action при помощи деструкциризации, эти actions можно будет использовать в компонентах при импорте среза
+export const { setActivePopup } = popupSlice.actions; // redux-toolkit позволяет экспортировать action при помощи деструкциризации, эти actions можно будет использовать в компонентах при импорте среза
 export default popupSlice.reducer; // подключаем к store (именно reducer!!! а не reducers)
 
 
